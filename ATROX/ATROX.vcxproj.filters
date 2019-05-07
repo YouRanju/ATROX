@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Engine">
+      <UniqueIdentifier>{5c4dae81-6a0b-4a3b-9b0a-c648314ced57}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\App">
+      <UniqueIdentifier>{abc4ad4f-8abe-48a9-9209-8dba30f99e62}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Texture">
+      <UniqueIdentifier>{584b7c2c-4dcd-4625-8df9-0ca272c9a8d9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Sprite">
+      <UniqueIdentifier>{4d918a4a-48f2-4e49-a6e2-bfa677e64370}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Font">
+      <UniqueIdentifier>{9325b6ad-bff4-4f15-b570-639a8eb6dd18}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game">
+      <UniqueIdentifier>{0b93b0fe-b60e-4fa0-a95e-a9efec03048f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Engine\Input">
+      <UniqueIdentifier>{31276386-1f75-4de2-bd3b-ca2b343a6fcc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\MainGame">
+      <UniqueIdentifier>{4806dc1d-a5ad-4198-b461-ac6ee091652e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\MainGame\BackGround">
+      <UniqueIdentifier>{b607f596-e7eb-48ff-b3bd-cf45755ef064}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\MainGame\Player">
+      <UniqueIdentifier>{cfa057b3-772d-41e1-b65c-178581d3ecbb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameImage">
+      <UniqueIdentifier>{e9ca1b41-326c-4d1b-88e1-aa78a40aba15}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameImage\End">
+      <UniqueIdentifier>{96d26b43-5ab6-418b-8cde-c59986241989}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameImage\Intro">
+      <UniqueIdentifier>{15f835d6-7844-4eaf-8b92-dfd1d0eb1682}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Game\GameImage\Menu">
+      <UniqueIdentifier>{844b2c88-fb05-466c-a826-0906c706ed3a}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="WinApp.cpp">
+      <Filter>Engine\App</Filter>
+    </ClCompile>
+    <ClCompile Include="ATROX.cpp" />
+    <ClCompile Include="CTexture.cpp">
+      <Filter>Engine\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="CSprite.cpp">
+      <Filter>Engine\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="CText.cpp">
+      <Filter>Engine\Font</Filter>
+    </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>Game\MainGame\Player</Filter>
+    </ClCompile>
+    <ClCompile Include="Background.cpp">
+      <Filter>Game\MainGame\BackGround</Filter>
+    </ClCompile>
+    <ClCompile Include="GameScene.cpp">
+      <Filter>Game\MainGame</Filter>
+    </ClCompile>
+    <ClCompile Include="CInput.cpp">
+      <Filter>Engine\Input</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="WinApp.h">
+      <Filter>Engine\App</Filter>
+    </ClInclude>
+    <ClInclude Include="CTexture.h">
+      <Filter>Engine\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="CSprite.h">
+      <Filter>Engine\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="CText.h">
+      <Filter>Engine\Font</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>Game\MainGame\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="Background.h">
+      <Filter>Game\MainGame\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="GameScene.h">
+      <Filter>Game\MainGame</Filter>
+    </ClInclude>
+    <ClInclude Include="CInput.h">
+      <Filter>Engine\Input</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
