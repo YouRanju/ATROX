@@ -4,6 +4,7 @@
 #include "Background.h"
 
 #include "CInput.h"
+#include "CSound.h"
 
 class GameScene
 {
@@ -22,6 +23,7 @@ public:
 	Background* m_BG3[5];
 
 	CInput* m_Input;
+	CSound* m_Sound;
 
 	void Input();
 	void Update(float eTime);

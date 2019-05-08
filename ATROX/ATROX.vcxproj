@@ -154,6 +154,7 @@
     <ClCompile Include="ATROX.cpp" />
     <ClCompile Include="Background.cpp" />
     <ClCompile Include="CInput.cpp" />
+    <ClCompile Include="CSound.cpp" />
     <ClCompile Include="CSprite.cpp" />
     <ClCompile Include="CText.cpp" />
     <ClCompile Include="CTexture.cpp" />
@@ -164,6 +165,7 @@
   <ItemGroup>
     <ClInclude Include="Background.h" />
     <ClInclude Include="CInput.h" />
+    <ClInclude Include="CSound.h" />
     <ClInclude Include="CSprite.h" />
     <ClInclude Include="CText.h" />
     <ClInclude Include="CTexture.h" />

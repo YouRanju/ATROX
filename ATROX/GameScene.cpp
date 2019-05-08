@@ -39,14 +39,24 @@ GameScene::GameScene(HWND hwnd, HINSTANCE hinstance, LPDIRECT3DDEVICE9 device)
 
 		speed += 200;
 	}
+
+	m_Sound = new CSound(hwnd);
+	m_Sound->DirectSoundInit();
+	m_Sound->AddSoundBuffer(m_Sound->LoadWav((TCHAR*)_T("Resource/music/Background.wav")));
+	m_Sound->Play(0, TRUE);
 }
 
 GameScene::~GameScene()
 {
 	delete m_pPlayer;
+	delete m_Input;
+	delete m_Sound;
 	for (int i = 0; i < 6; i++) {
 		delete m_BG1[i];
 		delete m_BG2[i];
+	}
+
+	for (int i = 0; i < 5; i++) {
 		delete m_BG3[i];
 	}
 }

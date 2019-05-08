@@ -49,14 +49,14 @@ int WinApp::Loop()
 
 			m_pD3DDevice->Clear(0, NULL, D3DCLEAR_TARGET, m_ClearColor, 1.0f, 0);
 
+			float dt = GetTime();
+			//업데이트
+
 			m_Input->ReadKey();
 
 			if (m_Input->IsActionKey(DIK_ESCAPE)) {
 				msg.message = WM_QUIT;
 			}
-
-			float dt = GetTime();
-			//업데이트
 
 			m_GameScene->Update(dt);
 			m_GameScene->Input();
@@ -64,7 +64,7 @@ int WinApp::Loop()
 			if (SUCCEEDED(m_pD3DDevice->BeginScene())) {
 				//렌더
 
-				m_Font->Draw((int)WIDTH / 2 - 70, (int)HEIGHT / 2 - 10, (int)WIDTH, (int)HEIGHT, 
+				m_Font->Draw((int)WIDTH / 2 - 70, (int)HEIGHT / 2 - 10, (int)WIDTH, (int)HEIGHT,
 					_T("Ready"), D3DCOLOR_XRGB(255, 255, 0));
 
 				m_GameScene->Render();

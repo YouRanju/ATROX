@@ -43,6 +43,9 @@
     <Filter Include="Game\GameImage\Menu">
       <UniqueIdentifier>{844b2c88-fb05-466c-a826-0906c706ed3a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Sound">
+      <UniqueIdentifier>{1247fede-336b-4c57-87c0-edf147359944}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinApp.cpp">
@@ -70,6 +73,9 @@
     <ClCompile Include="CInput.cpp">
       <Filter>Engine\Input</Filter>
     </ClCompile>
+    <ClCompile Include="CSound.cpp">
+      <Filter>Engine\Sound</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WinApp.h">
@@ -95,6 +101,9 @@
     </ClInclude>
     <ClInclude Include="CInput.h">
       <Filter>Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="CSound.h">
+      <Filter>Engine\Sound</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
