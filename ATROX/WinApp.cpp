@@ -63,8 +63,8 @@ int WinApp::Loop()
 			if (SUCCEEDED(m_pD3DDevice->BeginScene())) {
 				//·»´õ
 
-				m_Font->Draw((int)WIDTH / 2 - 70, (int)HEIGHT / 2 - 10, (int)WIDTH, (int)HEIGHT,
-					_T("Ready"), D3DCOLOR_XRGB(255, 255, 0));
+				//m_Font->Draw((int)WIDTH / 2 - 70, (int)HEIGHT / 2 - 10, (int)WIDTH, (int)HEIGHT,
+				//	_T("Ready"), D3DCOLOR_XRGB(255, 255, 0));
 
 				m_GameScene->Render();
 

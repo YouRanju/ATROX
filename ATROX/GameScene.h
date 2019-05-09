@@ -28,10 +28,16 @@ public:
 	CSound* m_Sound;
 
 	float JumpTime;
+	float EnemyHowlingTime;
 	
 	int index;
 
 	void Input(float eTime);
 	void Update(float eTime);
 	void Render();
+
+	void SoundManage();
+
+	void PlayerManage();
+	void EnemyManage();
 };

@@ -12,16 +12,19 @@ class Enemy
 {
 private:
 	//D3DXMATRIX mat;
-	//D3DXVECTOR3 pcPos;
+	D3DXVECTOR3 Pos;
 	float frame, frameSpeed;
 
+	int hp;
 	float speed;
-
+	
 public:
 	CSprite *normalAni, *moveAni;
 	vector<CSprite*> animate;
 
-	//D3DXVECTOR3 pcDir;
+	D3DXVECTOR3 Dir;
+
+	bool isLoad;
 
 public:
 	Enemy(LPDIRECT3DDEVICE9 device, const char* filename);
@@ -29,4 +32,15 @@ public:
 
 	void Update(float eTime);
 	void Render();
+
+	void SetHp(int hp) { 
+		this->hp = hp; 
+		isLoad = true; 
+	}
+
+	bool IsAlive()
+	{
+		if (hp > 0) return true;
+		return false;
+	}
 };

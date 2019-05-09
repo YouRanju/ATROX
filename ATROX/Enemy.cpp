@@ -17,7 +17,8 @@ Enemy::Enemy(LPDIRECT3DDEVICE9 device, const char* filename)
 	frame = 0;
 	frameSpeed = 5.0f;
 
-	//pcPos = animate[(int)frame]->GetPosition();
+	Pos = animate[(int)frame]->GetPosition();
+	Dir = D3DXVECTOR3(-1, 0, 0);
 	speed = 400;
 }
 
@@ -32,14 +33,24 @@ Enemy::~Enemy()
 
 void Enemy::Update(float eTime)
 {
-	frame += eTime * frameSpeed;
 
-	if ((int)frame >= 2)
-	{
-		frame = 0;
+	if (eTime > 0.2f) {
+		isLoad = false;
 	}
+	
+	if (this->IsAlive()) {
+		frame += eTime * frameSpeed;
 
-	//pcPos += pcDir * eTime * speed;
+		if ((int)frame >= 2)
+		{
+			frame = 0;
+		}
+
+		if (Pos.x <= 100) Dir.x = 1;
+		if (Pos.x >= 1900) Dir.x = -1;
+
+		Pos += Dir * eTime * speed;
+	}
 }
 
 void Enemy::Render()
@@ -47,6 +58,8 @@ void Enemy::Render()
 	//	D3DXMatrixScaling(&mat, 3.f, 3.f, 0.f);
 	//	animate[(int)frame]->SetTrans(mat);
 
-	//animate[(int)frame]->SetPosition(pcPos);
-	animate[(int)frame]->Draw();
+	if (this->IsAlive()) {
+		animate[(int)frame]->SetPosition(Pos);
+		animate[(int)frame]->Draw();
+	}
 }
