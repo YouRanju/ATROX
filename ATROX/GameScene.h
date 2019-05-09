@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Player.h"
+#include "Enemy.h"
 #include "Background.h"
 
 #include "CInput.h"
@@ -18,6 +19,7 @@ public:
 	virtual ~GameScene();
 
 	Player* m_pPlayer;
+	Enemy* m_Enemy;
 	Background* m_BG1[6];
 	Background* m_BG2[6];
 	Background* m_BG3[5];
@@ -25,7 +27,11 @@ public:
 	CInput* m_Input;
 	CSound* m_Sound;
 
-	void Input();
+	float JumpTime;
+	
+	int index;
+
+	void Input(float eTime);
 	void Update(float eTime);
 	void Render();
 };

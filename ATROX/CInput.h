@@ -19,7 +19,7 @@ public:
 	void ShutDown();
 	bool ReadKey();
 
-	bool IsActionKey(int key);
+	bool IsActionKey(int key, int time);
 
 	float IsKeyPress(int key) {
 		return (m_KeyboardState[key] & 0x80) ? 1.0f : 0.0f;

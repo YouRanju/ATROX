@@ -4,7 +4,6 @@
 #include <d3dx9.h>
 #include <vector>
 
-#include "Player.h"
 #include "CSprite.h"
 
 using namespace std;
@@ -13,17 +12,31 @@ class Player
 {
 private:
 	//D3DXMATRIX mat;
-	D3DXVECTOR3 pcPos;
 	float frame, frameSpeed;
 
 	float speed;
 	int level;
 
+	//มกวม
+	bool isFalling;
+	float m_PrHeight;
+	float m_JumpPower;
+	float m_JumpTime;
+	int m_life;
+
 public:
 	CSprite *normalAni, *moveAni;
 	vector<CSprite*> animate;
 	
+	D3DXVECTOR3 pcPos;
 	D3DXVECTOR3 pcDir;
+
+	float m_OrHeight;
+
+	bool m_Jump;
+	bool m_2ndJump;
+	bool JumpKey;
+	bool Is2ndJumpKey;
 
 public:
 	Player(LPDIRECT3DDEVICE9 device);
@@ -33,5 +46,7 @@ public:
 	void Render();
 
 	void ArrangePos(float sx, float ex);
+
+	void Jump(float eTime);
 };
 

@@ -81,13 +81,13 @@ bool CInput::ReadKey()
 	return true;
 }
 
-bool CInput::IsActionKey(int key)
+bool CInput::IsActionKey(int key, int time)
 {
 	static DWORD dwPrevTime = 0;
 	DWORD dwCurTime = GetTickCount();
 	int dt = dwCurTime - dwPrevTime;
 
-	if ((dt > 10) && (m_KeyboardState[key] & 0x80)) {
+	if ((dt > time) && (m_KeyboardState[key] & 0x80)) {
 		m_KeyboardState[key] = 0;
 		dwPrevTime = dwCurTime;
 

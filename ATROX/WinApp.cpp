@@ -54,12 +54,11 @@ int WinApp::Loop()
 
 			m_Input->ReadKey();
 
-			if (m_Input->IsActionKey(DIK_ESCAPE)) {
+			if (m_Input->IsActionKey(DIK_ESCAPE, 10)) {
 				msg.message = WM_QUIT;
 			}
 
 			m_GameScene->Update(dt);
-			m_GameScene->Input();
 
 			if (SUCCEEDED(m_pD3DDevice->BeginScene())) {
 				//·»´õ

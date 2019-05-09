@@ -46,6 +46,9 @@
     <Filter Include="Engine\Sound">
       <UniqueIdentifier>{1247fede-336b-4c57-87c0-edf147359944}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Game\MainGame\Enemy">
+      <UniqueIdentifier>{f8d34558-4287-403a-83aa-2c43f2f4fef1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="WinApp.cpp">
@@ -76,6 +79,9 @@
     <ClCompile Include="CSound.cpp">
       <Filter>Engine\Sound</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy.cpp">
+      <Filter>Game\MainGame\Enemy</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="WinApp.h">
@@ -104,6 +110,9 @@
     </ClInclude>
     <ClInclude Include="CSound.h">
       <Filter>Engine\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy.h">
+      <Filter>Game\MainGame\Enemy</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
