@@ -45,8 +45,8 @@ public:
 	void Update(float eTime);
 	void Render();
 
-	void ArrangePos(float sx, float ex);
-
 	void Jump(float eTime);
+	
+	void ArrangePos(float sx, float ex);
 };
 

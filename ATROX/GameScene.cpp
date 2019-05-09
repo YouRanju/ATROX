@@ -15,34 +15,34 @@ GameScene::GameScene(HWND hwnd, HINSTANCE hinstance, LPDIRECT3DDEVICE9 device)
 	m_Enemy = new Enemy(device, "alien1_1");
 	m_Enemy->SetHp(1);
 
-	int speed = 10;
+	float speed = 10.f;
 	for (int i = 0; i < 6; i++)
 	{
 		char path[6][100];
 		sprintf_s(path[i], 100, "Resource/Stage1/stage1_%d.png", i + 1);
-		m_BG1[i] = new Background(device, path[i], 2000, speed);
+		m_BG1[i] = new Background(device, path[i], 2000.f, speed);
 
-		speed += 200;
+		speed += 200.f;
 	}
 
-	speed = 10;
+	speed = 10.f;
 	for (int i = 0; i < 6; i++)
 	{
 		char path[6][100];
 		sprintf_s(path[i], 100, "Resource/Stage2/stage2_%d.png", i + 1);
-		m_BG2[i] = new Background(device, path[i], 2000, speed);
+		m_BG2[i] = new Background(device, path[i], 2000.f, speed);
 
-		speed += 200;
+		speed += 200.f;
 	}
 
-	speed = 10;
+	speed = 10.f;
 	for (int i = 0; i < 5; i++)
 	{
 		char path[6][100];
 		sprintf_s(path[i], 100, "Resource/Stage3/stage3_%d.png", i + 1);
-		m_BG3[i] = new Background(device, path[i], 2000, speed);
+		m_BG3[i] = new Background(device, path[i], 2000.f, speed);
 
-		speed += 200;
+		speed += 200.f;
 	}
 
 	m_Sound = new CSound(hwnd);
@@ -96,10 +96,17 @@ void GameScene::Input(float eTime)
 
 	//이동
 	m_pPlayer->pcDir.x = 0;
-	m_pPlayer->pcDir.x -= m_Input->IsKeyPress(DIK_LEFTARROW) * 2.2;
+	m_pPlayer->pcDir.x -= m_Input->IsKeyPress(DIK_LEFTARROW);
 	m_pPlayer->pcDir.x += m_Input->IsKeyPress(DIK_RIGHTARROW);
 
-	m_pPlayer->ArrangePos(100, 1300);
+	m_pPlayer->ArrangePos(300, 1300);
+
+	//배경 이동
+	for (int i = 0; i < 6; i++) {
+		m_BG1[i]->dirX = 0;
+		m_BG1[i]->dirX += m_Input->IsKeyPress(DIK_LEFTARROW);
+		m_BG1[i]->dirX -= m_Input->IsKeyPress(DIK_RIGHTARROW);
+	}
 }
 
 void GameScene::Update(float eTime)

@@ -10,6 +10,7 @@ Background::Background(LPDIRECT3DDEVICE9 pDevice, const char* filename, float sc
 	}
 
 	m_Scroll.x = 0.f;
+	dirX = 0.f;
 }
 
 Background::~Background()
@@ -20,12 +21,15 @@ Background::~Background()
 	}
 }
 
-void Background::Update(float dt)
+void Background::Update(float eTime)
 {
-	m_Scroll.x -= (m_speed * dt);
+	m_Scroll.x += dirX * m_speed * eTime;
 
-	if (m_Scroll.x < -m_Screen) {
+	if (dirX < 0 && m_Scroll.x < -m_Screen) {
 		m_Scroll.x += m_Screen;
+	}
+	if (dirX > 0 && m_Scroll.x > -m_Screen) {
+		m_Scroll.x -= m_Screen;
 	}
 
 	D3DXVECTOR3 pos1 = D3DXVECTOR3(m_Scroll.x, 0.f, 0.f);

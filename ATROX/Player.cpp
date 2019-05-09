@@ -1,16 +1,11 @@
 #include "Player.h"
 
-#include "WinApp.h"
-
 Player::Player(LPDIRECT3DDEVICE9 device)
 {
 	//1
 	normalAni = new CSprite(device, "Resource/player/tank.png");
 	normalAni->SetPosition(
-		D3DXVECTOR3(WinApp::WIDTH / 2 - normalAni->GetWidth() / 2, 
-			1000 - (normalAni->GetHeight() + 100),
-			0
-		)
+		D3DXVECTOR3(500, 1000 - (normalAni->GetHeight() + 100), 0)
 	);
 	animate.push_back(normalAni);
 
@@ -21,10 +16,7 @@ Player::Player(LPDIRECT3DDEVICE9 device)
 	// 2
 	normalAni = new CSprite(device, "Resource/player/tank2.png");
 	normalAni->SetPosition(
-		D3DXVECTOR3(WinApp::WIDTH / 2 - normalAni->GetWidth() / 2,
-			1000 - (normalAni->GetHeight() + 100),
-			0
-		)
+		D3DXVECTOR3(500, 1000 - (normalAni->GetHeight() + 100), 0)
 	);
 	animate.push_back(normalAni);
 
@@ -35,9 +27,7 @@ Player::Player(LPDIRECT3DDEVICE9 device)
 	// 3
 	normalAni = new CSprite(device, "Resource/player/tank3.png");
 	normalAni->SetPosition(
-		D3DXVECTOR3(WinApp::WIDTH / 2 - normalAni->GetWidth() / 2,
-			1000 - (normalAni->GetHeight() + 100),
-			0
+		D3DXVECTOR3(500, 1000 - (normalAni->GetHeight() + 100), 0
 		)
 	);
 	animate.push_back(normalAni);
@@ -66,17 +56,13 @@ Player::~Player()
 void Player::Update(float eTime)
 {
 	frame += eTime * frameSpeed;
-
 	if ((int)frame >= level*2 && !m_Jump)
-	{
 		frame = (level == 1) ? 0 : (level == 2) ? 2 : 4;
-	}
 
-	pcPos += pcDir * eTime * speed;
+	pcPos += (pcDir * 0.43) * eTime * speed;
 
-	if (JumpKey) {
+	if (JumpKey) 
 		this->Jump(eTime);
-	}
 }
 
 void Player::Render()
@@ -84,25 +70,8 @@ void Player::Render()
 //	D3DXMatrixScaling(&mat, 3.f, 3.f, 0.f);
 //	animate[(int)frame]->SetTrans(mat);
 
-	if (!m_Jump) {
-		animate[(int)frame]->SetPosition(pcPos);
-		animate[(int)frame]->Draw();
-	}
-
-	if (m_Jump) {
-		animate[(int)frame]->Draw();
-	}
-	
-}
-
-void Player::ArrangePos(float sx, float ex)
-{
-	if (pcPos.x < sx) {
-		pcPos.x = sx;
-	}
-	if (pcPos.x > ex) {
-		pcPos.x = ex;
-	}
+	animate[(int)frame]->SetPosition(pcPos);
+	animate[(int)frame]->Draw();
 }
 
 void Player::Jump(float eTime)
@@ -140,12 +109,20 @@ void Player::Jump(float eTime)
 			m_Jump = false;
 
 			frame = 1;
-			animate[(int)frame]->SetPosition(pcPos);
 
 			JumpKey = false;
 		}
 
 		m_PrHeight = pcPos.y;
-		animate[(int)frame]->SetPosition(pcPos);
+	}
+}
+
+void Player::ArrangePos(float sx, float ex)
+{
+	if (pcPos.x < sx) {
+		pcPos.x = sx;
+	}
+	if (pcPos.x > ex) {
+		pcPos.x = ex;
 	}
 }

@@ -14,10 +14,13 @@ protected:
 	float m_speed;
 
 public:
+	float dirX;
+
+public:
 	explicit Background(LPDIRECT3DDEVICE9 pDevice, const char* filename, float screen, float speed);
 	virtual ~Background();
 
-	void Update(float dt);
+	void Update(float eTime);
 	void Render();
 
 	void SetScroll(float point) {
